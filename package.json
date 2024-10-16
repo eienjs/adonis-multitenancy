@@ -1,0 +1,93 @@
+{
+  "name": "@eienjs/adonis-multitenancy",
+  "description": "Make your AdonisJS app usable by multiple tenants",
+  "version": "0.0.1",
+  "type": "module",
+  "module": "",
+  "files": [
+    "dist"
+  ],
+  "exports": {},
+  "imports": {
+    "#src/*": "./src/*.js"
+  },
+  "scripts": {
+    "prepare": "is-in-ci || husky",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md",
+    "prebuild": "pnpm lint:check && pnpm typecheck",
+    "build": "tshy",
+    "release": "np",
+    "version": "pnpm run build && pnpm run changelog"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@nodecfdi/eslint-config": "^2.1.2",
+    "@nodecfdi/prettier-config": "^1.2.0",
+    "@nodecfdi/tsconfig": "^1.7.2",
+    "auto-changelog": "^2.5.0",
+    "eslint": "^9.12.0",
+    "husky": "^9.1.6",
+    "is-in-ci": "^1.0.0",
+    "np": "^10.0.7",
+    "prettier": "^3.3.3",
+    "tshy": "^3.0.2",
+    "typescript": "^5.6.3"
+  },
+  "peerDependenciesMeta": {},
+  "author": "Fernando Isidro <luffynando@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/eienjs/adonis-multitenancy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eienjs/adonis-multitenancy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eienjs/adonis-multitenancy/issues"
+  },
+  "keywords": [
+    "adonisjs",
+    "lucid",
+    "tenants",
+    "multitenancy"
+  ],
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "prettier": "@nodecfdi/prettier-config",
+  "packageManager": "pnpm@9.12.1",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "auto-changelog": {
+    "template": "keepachangelog",
+    "hideCredit": true
+  },
+  "np": {
+    "message": "chore(release): :tada: %s",
+    "tag": "latest",
+    "branch": "main",
+    "yolo": true
+  },
+  "tshy": {
+    "selfLink": false,
+    "dialects": [
+      "esm"
+    ],
+    "exports": {
+      ".": "./src/index.ts",
+      "./types": "./src/types.ts"
+    }
+  }
+}
