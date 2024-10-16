@@ -27,6 +27,8 @@
     "version": "pnpm build && pnpm changelog"
   },
   "devDependencies": {
+    "@adonisjs/core": "^6.14.1",
+    "@adonisjs/lucid": "^21.3.0",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@japa/assert": "^3.0.0",
@@ -35,6 +37,7 @@
     "@nodecfdi/prettier-config": "^1.2.0",
     "@nodecfdi/tsconfig": "^1.7.2",
     "@swc/core": "^1.7.36",
+    "@types/node": "^22.7.5",
     "auto-changelog": "^2.5.0",
     "eslint": "^9.12.0",
     "husky": "^9.1.6",
@@ -46,7 +49,13 @@
     "tshy": "^3.0.2",
     "typescript": "^5.6.3"
   },
-  "peerDependenciesMeta": {},
+  "dependencies": {
+    "@poppinss/utils": "^6.8.3"
+  },
+  "peerDependencies": {
+    "@adonisjs/core": "^6.14.1",
+    "@adonisjs/lucid": "^21.3.0"
+  },
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/eienjs/adonis-multitenancy",
@@ -72,7 +81,7 @@
     ]
   },
   "prettier": "@nodecfdi/prettier-config",
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@9.12.2",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
